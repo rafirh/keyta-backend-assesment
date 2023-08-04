@@ -7,4 +7,4 @@ $ python main.py
 ### Output screenshot
 
 #### Choose menu
-![Alt text]("./screenshoots/menus.png")
+![Alt text](menus.png)
