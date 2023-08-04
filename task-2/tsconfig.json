@@ -34,7 +34,8 @@
       "@adonisjs/lucid",
       "@adonisjs/auth",
       "@adonisjs/mail",
-      "@adonisjs/ally"
+      "@adonisjs/ally",
+      "adonis5-scheduler"
     ]
   }
 }

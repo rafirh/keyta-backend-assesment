@@ -1,8 +1,8 @@
 import BaseRepository from "App/Base/Repositories/BaseRepository";
-import Account from "App/Models/User";
+import User from "App/Models/User";
 
-export default class AccountRepository extends BaseRepository {
+export default class UserRepository extends BaseRepository {
   constructor() {
-    super(Account);
+    super(User);
   }
 }

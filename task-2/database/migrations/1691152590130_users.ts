@@ -9,6 +9,7 @@ export default class extends BaseSchema {
       table.string('name', 255).notNullable()
       table.string('timezone', 255).notNullable()
       table.date('birthday').notNullable()
+      table.boolean('has_congratulated_birthday').notNullable().defaultTo(false)
       table.timestamp('created_at', { useTz: true })
       table.timestamp('updated_at', { useTz: true })
     })

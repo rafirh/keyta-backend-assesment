@@ -1,11 +1,11 @@
 import { HttpContextContract } from "@ioc:Adonis/Core/HttpContext";
-import AccountService from "App/Services/AccountService";
-import CreateAccountValidator from "App/Validators/CreateUserValidator";
-import UpdateAccountValidator from "App/Validators/UpdateUserValidator";
+import UserService from "App/Services/UserService";
+import CreateUserValidator from "App/Validators/CreateUserValidator";
+import UpdateUserValidator from "App/Validators/UpdateUserValidator";
 import { ValidationException } from "@ioc:Adonis/Core/Validator";
 
-export default class AccountController {
-  service = new AccountService();
+export default class UserController {
+  service = new UserService();
   FETCHED_ATTRIBUTE = [
     "name",
     "timezone",
@@ -24,7 +24,7 @@ export default class AccountController {
 
   public async store({ request, response }: HttpContextContract) {
     try {
-      await request.validate(CreateAccountValidator);
+      await request.validate(CreateUserValidator);
       const data = request.only(this.FETCHED_ATTRIBUTE);
       const result = await this.service.store(data);
       return response.api(result, "User created!", 201);
@@ -46,7 +46,7 @@ export default class AccountController {
       const options = request.parseParams(request.all());
       const result = await this.service.show(params.id, options);
       if (!result) {
-        return response.api(null, `Account with id: ${params.id} not found`);
+        return response.api(null, `User with id: ${params.id} not found`);
       }
       return response.api(result);
     } catch (error) {
@@ -56,11 +56,11 @@ export default class AccountController {
 
   public async update({ params, request, response }: HttpContextContract) {
     try {
-      await request.validate(UpdateAccountValidator);
+      await request.validate(UpdateUserValidator);
       const data = request.only(this.FETCHED_ATTRIBUTE);
       const result = await this.service.update(params.id, data);
       if (!result) {
-        return response.api(null, `Account with id: ${params.id} not found`);
+        return response.api(null, `User with id: ${params.id} not found`);
       }
       return response.api(result, "User updated!");
     } catch (error) {
@@ -80,7 +80,7 @@ export default class AccountController {
     try {
       const result = await this.service.delete(params.id);
       if (!result) {
-        return response.api(null, `Account with id: ${params.id} not found`);
+        return response.api(null, `User with id: ${params.id} not found`);
       }
       return response.api(null, "User deleted!");
     } catch (error) {
@@ -91,7 +91,7 @@ export default class AccountController {
   public async destroyAll({ response }: HttpContextContract) {
     try {
       await this.service.deleteAll();
-      return response.api(null, "All Account deleted!");
+      return response.api(null, "All User deleted!");
     } catch (error) {
       return response.error(error.message);
     }

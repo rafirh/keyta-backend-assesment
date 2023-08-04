@@ -4,7 +4,7 @@ import {
   column,
 } from "@ioc:Adonis/Lucid/Orm";
 
-export default class Account extends BaseModel {
+export default class User extends BaseModel {
   @column({ isPrimary: true })
   public id: string;
 
@@ -16,6 +16,9 @@ export default class Account extends BaseModel {
 
   @column()
   public birthday: string;
+
+  @column()
+  public has_congratulated_birthday: boolean;
 
   @column.dateTime({ autoCreate: true })
   public created_at: DateTime;
