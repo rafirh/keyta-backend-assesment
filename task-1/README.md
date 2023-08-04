@@ -16,10 +16,10 @@ $ python main.py
 ![Alt text](triangle_star_pattern_b.png)
 
 #### Print Triangle Star Pattern C
-![Alt text](triangle_star_pattern_c.png)![Alt text](image.png)
+![Alt text](triangle_star_pattern_c.png)
 
 #### Print Triangle Star Pattern D
-![Alt text](triangle_star_pattern_d.png)![Alt text](image-1.png)
+![Alt text](triangle_star_pattern_d.png)
 
 #### Print Fibonacci Sequence
 ![Alt text](fibonacci_sequence.png)
