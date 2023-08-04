@@ -33,7 +33,7 @@ export default class CongratulateBirthday extends BaseTask {
       const dateBirthday = userBirthday.date();
 
       if (userTime.hour() === 9 && userTime.month() === monthBirthday && userTime.date() === dateBirthday) {
-        const message = `Hey, ${user.name} it's your birthday today!`;
+        const message = `Hey, ${user.name} it's your birthday!`;
         try {
           await axios.post(
             "https://eo5uccqnfdhmmq7.m.pipedream.net",
