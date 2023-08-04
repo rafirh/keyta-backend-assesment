@@ -26,6 +26,8 @@ export default class CongratulateBirthday extends BaseTask {
       .where("has_congratulated_birthday", false)
       .exec();
     
+    console.log(`Count user birthday today: ${users.length}`);
+
     for (const user of users) {
       const userTime = today.tz(user.timezone);
       const userBirthday = moment(user.birthday).tz(user.timezone);
