@@ -47,7 +47,7 @@ def print_triangle_star_pattern_c():
 def print_triangle_star_pattern_d():
     print("========== 4. Print Triangle Star Pattern D ==========")
     print_newlines(1)
-    triangle_height = get_int_input("Enter the height of the triangle: (Must be odd number) ")
+    triangle_height = get_int_input("Enter the height of the triangle (Must be odd number): ")
     print_newlines(1)
 
     if triangle_height % 2 == 0:
