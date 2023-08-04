@@ -1,10 +1,10 @@
 ### How to run
 
 ```bash
-$ python3 main.py
+$ python main.py
 ```
 
 ### Output screenshot
 
 #### Choose menu
-![Alt text](/screenshoots/image.png)
+![Alt text](/screenshoots/menus.png)
