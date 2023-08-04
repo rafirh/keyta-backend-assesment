@@ -69,13 +69,13 @@ def print_fibonacci_sequence():
     first_term, second_term = 0, 1
     count = 0
 
-    print("[", end=' ')
+    print("[")
     if n == 1:
         print(first_term)
     else:
         while count < n:
             if count == n - 1:
-                print(first_term, end=' ')
+                print(first_term)
             else:
                 print(first_term, end=', ')
 
