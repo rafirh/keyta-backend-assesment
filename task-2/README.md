@@ -1,35 +1,41 @@
-# AdonisJS v5 Boilerplate
+## How to run the project
 
-Using repository and service pattern
-
-## Setup
-
-1. Clone this repository `git clone git@gitlab.com:profile-image/boilerplate/adonisjs-v5-boilerplate.git`
-2. Copy file `.env.example` to `.env`
-3. Create database
-4. Run `boilerplate.sql` in folder `database/sql`
-5. Change database name and connection in `.env`
-6. Run command `npm install` to install dependencies
-7. Run server with `npm run dev`
-
-## Creating Module
-
-Create model, repository, service, controller, validators and route using below command:
-
-```bash
-node ace make:module <Namespace> <ModelName> --endpoint <EndpointName> --soft-delete --uuid
+### 1. Clone the repository
+```
+git clone https://github.com/rafirh/keyta-backend-assesment.git
+cd keyta-backend-assesment/task-2
 ```
 
-Example: I will make module for user table with soft delete
-
-```bash
-node ace make:module User User --endpoint users --soft-delete
+### 2. Install dependencies
+```
+npm install
 ```
 
-Notes:
+### 3. Copy .env.example to .env
+```
+cp .env.example .env
+```
 
-1. Namespace is required and using CamelCase.
-2. ModelName is required and using CamelCase.
-3. EndpointName is required and using lowercase. If endpoint have more than one word, separate them with `-`.
-4. --soft-delete is optional. Use only when your table has `deleted_at` column.
-5. --uuid is optional. Use only when your primaryKey using uuid.
+### 4. Create database with name `task_2` and run migration
+```
+node ace migration:run
+```
+
+### 5. Run the project
+```
+npm run dev
+```
+
+### 6. Run the scheduler
+```
+node ace scheduler:run
+```
+
+### 7. User endpoint
+```
+GET http://localhost:3333/api/users
+GET http://localhost:3333/api/users/:id
+POST http://localhost:3333/api/users
+PUT http://localhost:3333/api/users/:id
+DELETE http://localhost:3333/api/users/:id
+```
