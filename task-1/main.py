@@ -54,6 +54,8 @@ def print_triangle_star_pattern_d():
         print("Height must be odd number")
         return
     
+    triangle_height = triangle_height * 2 - 1
+
     for i in range(1, triangle_height + 1, 2):
         spaces = " " * ((triangle_height - i) // 2)
         stars = "*" * i
