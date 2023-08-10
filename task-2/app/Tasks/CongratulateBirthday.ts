@@ -26,7 +26,10 @@ export default class CongratulateBirthday extends BaseTask {
       .where("has_congratulated_birthday", false)
       .exec();
     
-    console.log(`Count user birthday today: ${users.length}`);
+    console.log({
+      time: today.format(),
+      message: `Count user birthday today who not yet sent: ${users.length}`,
+    });
 
     for (const user of users) {
       const userTime = today.tz(user.timezone);
